@@ -1,16 +1,47 @@
 # DeePost-Backend API
 
 ### Authentication API
-* [Register]() : `POST 
-http://deepost.pythonanywhere.com/authentication/register/`
+
+### Register
+####**URL** : `http://deepost.pythonanywhere.com/authentication/register/`
+
+**Method** : `POST`
+
+**Data example** All fields must be sent.
+
+```json
+{
+    "username": "",
+    "email": "",
+    "password": ""
+}
+```
 
 
 
-* [Login]() : `POST 
-http://deepost.pythonanywhere.com/authentication/login/`
+### Login
+####**URL** : `http://deepost.pythonanywhere.com/authentication/login/`
 
+**Method** : `POST`
 
+**Data example** All fields must be sent.
 
-* [Change Password]() : `POST 
-http://deepost.pythonanywhere.com/authentication/changepassword/`
+```json
+{
+    "username": "",
+    "password": ""
+}
+```
 
+### Change Password
+####**URL** : `http://deepost.pythonanywhere.com/authentication/changepassword/`
+
+**Method** : `POST`
+
+**Data example** All fields must be sent.
+
+```json
+{
+    "username": ""
+}
+```
