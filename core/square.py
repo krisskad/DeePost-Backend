@@ -3,8 +3,8 @@ from global_dependancies import *
 image = Image.new('RGB', (2000, 2000))
 width, height = image.size
 
-rectangle_width = 100
-rectangle_height = 100
+rectangle_width = 10
+rectangle_height = 10
 number_of_squares = random.randint(10, 50)
 draw_image = ImageDraw.Draw(image)
 for i in range(number_of_squares):
