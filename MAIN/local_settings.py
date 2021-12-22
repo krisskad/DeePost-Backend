@@ -1,9 +1,9 @@
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': 'db.sqlite3',
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'db.sqlite3',
+    }
+}
 
 
 # DATABASES = {
@@ -17,13 +17,13 @@
 #     }
 # }
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'deep_post',
-        'HOST': '127.0.0.1',
-        'PORT': '3306',
-        'USER': 'krisskad',
-        'PASSWORD': '',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'deep_post',
+#         'HOST': '127.0.0.1',
+#         'PORT': '3306',
+#         'USER': 'krisskad',
+#         'PASSWORD': '',
+#     }
+# }

@@ -1,11 +1,8 @@
 from django.db import models
 from django.contrib.auth import get_user_model
-from authentication.models import *
+User = get_user_model()
 
-
-# Create your models here.
-
-# User = get_user_model()
+# Create your models here
 
 
 class City(models.Model):
