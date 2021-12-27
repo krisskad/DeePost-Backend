@@ -6,26 +6,35 @@ User = get_user_model()
 
 
 class City(models.Model):
-    city = models.CharField(max_length=255)
+    name = models.CharField(max_length=255)
 
     def __str__(self):
-        return str(self.city)
+        return str(self.name)
+
+    class Meta:
+        verbose_name_plural = "Cities"
 
 
 class State(models.Model):
     city = models.ForeignKey(City, on_delete=models.PROTECT, editable=False)  # user_id
-    state = models.CharField(max_length=255)
+    name = models.CharField(max_length=255)
 
     def __str__(self):
-        return str(self.state)
+        return str(self.name)
+
+    class Meta:
+        verbose_name_plural = "States"
 
 
 class Country(models.Model):
     state = models.ForeignKey(State, on_delete=models.PROTECT, editable=False)  # user_id
-    country = models.CharField(max_length=255)
+    name = models.CharField(max_length=255)
 
     def __str__(self):
-        return str(self.country)
+        return str(self.name)
+
+    class Meta:
+        verbose_name_plural = "Countries"
 
 
 class PostType(models.Model):
@@ -143,6 +152,8 @@ class Promotions(models.Model):
 
     def __str__(self):
         return str(self.post.pk)
+    class Meta:
+        verbose_name_plural = "Promotions"
 
 
 class Advertisement(models.Model):

@@ -5,4 +5,4 @@ from accounts.models import UserAccount
 
 @admin.register(UserAccount)
 class UserAccountAdmin(admin.ModelAdmin):
-    pass
+    list_display = ('username', 'email', 'coins', 'date_joined', 'total_images', 'total_videos')
