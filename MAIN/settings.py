@@ -125,7 +125,8 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+# TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Kolkata'
 
 USE_I18N = True
 
@@ -186,6 +187,8 @@ SIMPLE_JWT = {
     # 'AUTH_HEADER_TYPE':('JWT',),
     'ACCESS_TOKEN_LIFETIME': timedelta(minutes=60),
     'REFRESH_TOKEN_LIFETIME': timedelta(days=90),
+    # 'ACCESS_TOKEN_LIFETIME': timedelta(seconds=30),
+    # 'REFRESH_TOKEN_LIFETIME': timedelta(minutes=1),
     'AUTH_TOKEN_CLASSES': (
         'rest_framework_simplejwt.token.AccessToken',
     )
@@ -201,7 +204,7 @@ DJOSER = {
     'USERNAME_CHANGE_EMAIL_CONFIRMATION': True,
     'PASSWORD_CHANGE_EMAIL_CONFIRMATION': True,
     'SEND_CONFIRMATION_EMAIL': True,
-    'PASSWORD_RESET_CONFIRM_URL': 'password/reset/confirm/{uid}/{token}',
+    'PASSWORD_RESET_CONFIRM_URL': 'auth/users/reset_password_confirm/{uid}/{token}',
     'USERNAME_RESET_CONFIRM_URL': 'username/reset/confirm/{uid}/{token}',
     'ACTIVATION_URL': 'pages/auth/activation?uid={uid}&token={token}',
     'SOCIAL_AUTH_TOKEN_STRATEGY': 'djoser.social.token.jwt.TokenStrategy',
