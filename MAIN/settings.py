@@ -209,9 +209,9 @@ DJOSER = {
     'USERNAME_CHANGE_EMAIL_CONFIRMATION': True,
     'PASSWORD_CHANGE_EMAIL_CONFIRMATION': True,
     'SEND_CONFIRMATION_EMAIL': True,
-    'PASSWORD_RESET_CONFIRM_URL': 'pages/auth/reset/password?uid={uid}&token={token}',
-    'USERNAME_RESET_CONFIRM_URL': 'pages/auth/reset/username?uid={uid}&token={token}',
-    'ACTIVATION_URL': 'pages/auth/activation?uid={uid}&token={token}',
+    'PASSWORD_RESET_CONFIRM_URL': 'pages/auth/public/reset-password-confirm?uid={uid}&token={token}',
+    'USERNAME_RESET_CONFIRM_URL': 'pages/auth/public/reset-username-confirm?uid={uid}&token={token}',
+    'ACTIVATION_URL': 'pages/auth/public/activate-account-confirm?uid={uid}&token={token}',
     'SOCIAL_AUTH_TOKEN_STRATEGY': 'djoser.social.token.jwt.TokenStrategy',
     'SOCIAL_AUTH_ALLOWED_REDIRECT_URIS': ['http://localhost:8000/google',],
     'SERIALIZERS': {

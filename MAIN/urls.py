@@ -14,8 +14,8 @@ urlpatterns = [
     # jwt custom token
     path('auth/', include('accounts.urls')),
 
-    # jwt default token
-    path('auth/', include('djoser.urls.jwt')),
+    # # # jwt default token
+    # path('auth/', include('djoser.urls.jwt')),
 
     # google OAuth2 conf
     path('auth/', include('djoser.social.urls'))
