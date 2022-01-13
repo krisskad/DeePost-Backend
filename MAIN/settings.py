@@ -26,7 +26,7 @@ SECRET_KEY = os.environ['SECRET_KEY']
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', 'deepost.in', 'deepost-api.herokuapp.com', '0.0.0.0', '127.0.0.1']
+ALLOWED_HOSTS = ['localhost', 'deepost.in', 'deepost-api.herokuapp.com', '0.0.0.0', '127.0.0.1', 'www.deepost.in']
 
 # CORS HEADERS
 CORS_ORIGIN_ALLOW_ALL = True
