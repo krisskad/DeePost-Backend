@@ -1,0 +1,13 @@
+{
+    "Authorization": "Client-ID de4c88d930b6f5c",
+    "client_id": "de4c88d930b6f5c",
+    "client_secret": "618ec2e9648b11001af51ea668cd425991644968",
+    "log": "[Errno 2] No such file or directory: '/home/krisskad/krishna/DeepMate/media/out/WhatsApp Image 2022-05-03 at 8.49.58 PM.jpeg'",
+    "access_token": "4ceaa0c67224c0b52898206cd0f10a35471900cb",
+    "expires_in": 315360000,
+    "token_type": "bearer",
+    "scope": null,
+    "refresh_token": "3e7ca3709d6932f6d2e1ce0280fde0da30b20ff3",
+    "account_id": 161962857,
+    "account_username": "deepostofficial"
+}

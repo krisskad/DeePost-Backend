@@ -1,6 +1,7 @@
 from django.contrib import admin
 from django.contrib import admin
 from explorer_app.models import *
+from imagekit.admin import AdminThumbnail
 
 
 @admin.register(City)
@@ -26,6 +27,15 @@ class PostTypeAdmin(admin.ModelAdmin):
 @admin.register(Post)
 class PostAdmin(admin.ModelAdmin):
     exclude = ("on_linkedin", "on_facebook", "on_instagram")
+    list_display = ['user','image', 'type', 'caption', 'tag_list',
+                    'total_likes', 'total_downloads', 'total_comments',
+                    'total_views', 'created_on']
+
+    def get_queryset(self, request):
+        return super().get_queryset(request).prefetch_related('tags')
+
+    def tag_list(self, obj):
+        return u", ".join(o.name for o in obj.tags.all())
 
 
 @admin.register(Comment)
@@ -82,3 +92,9 @@ class ContactedListAdmin(admin.ModelAdmin):
 class MessageAdmin(admin.ModelAdmin):
     list_display = [f.name for f in Message._meta.get_fields()]
 
+
+@admin.register(PostImage)
+class PostImageAdmin(admin.ModelAdmin):
+    list_display = ('__str__', 'thumbnail_url')
+    admin_thumbnail = AdminThumbnail(image_field='thumbnail_url')
+    # exclude = ("original_width", "original_height", "thumbnail_width", "thumbnail_height")

@@ -21,10 +21,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-k=b9#u3df)s%x*x593e5l65ay$tr648)+hdkk35*w++nks0w4m'
+SECRET_KEY = os.environ['SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['localhost', 'deepost.in', 'deepost-api.herokuapp.com', '0.0.0.0', '127.0.0.1', 'www.deepost.in']
 
@@ -154,7 +154,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 MEDIA_URL = '/media/'
 
-
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
@@ -169,9 +168,9 @@ AUTH_USER_MODEL = 'accounts.UserAccount'
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = '587'
-DEFAULT_FROM_EMAIL = 'scientistcity1@gmail.com'
-EMAIL_HOST_USER = 'scientistcity1@gmail.com'
-EMAIL_HOST_PASSWORD = 'ocuhmecfdkbrmaal'
+DEFAULT_FROM_EMAIL = os.environ['DEFAULT_FROM_EMAIL']
+EMAIL_HOST_USER = os.environ['EMAIL_HOST_USER']
+EMAIL_HOST_PASSWORD = os.environ['EMAIL_HOST_PASSWORD']
 EMAIL_USE_TLS = True
 
 
@@ -193,11 +192,11 @@ AUTHENTICATION_BACKEND = (
 #     # 'AUTH_HEADER_TYPE':('JWT',),
 #     'ACCESS_TOKEN_LIFETIME': timedelta(minutes=60),
 #     'REFRESH_TOKEN_LIFETIME': timedelta(days=90),
+#     # 'ACCESS_TOKEN_LIFETIME': timedelta(seconds=30),
+#     # 'REFRESH_TOKEN_LIFETIME': timedelta(minutes=1),
 #     'AUTH_TOKEN_CLASSES': (
 #         'rest_framework_simplejwt.token.AccessToken',
-#     ),
-#     'AUTH_HEADER_TYPES': ('Bearer',),
-#     'AUTH_HEADER_NAME': 'HTTP_AUTHORIZATION',
+#     )
 # }
 
 SIMPLE_JWT = {
@@ -230,7 +229,6 @@ SIMPLE_JWT = {
     'SLIDING_TOKEN_REFRESH_LIFETIME': timedelta(days=1),
 }
 
-
 DJOSER = {
     'USER_CREATE_PASSWORD_RETYPE': True,
     'SET_USERNAME_RETYPE': True,
@@ -259,8 +257,8 @@ DJOSER = {
     }
 }
 
-SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '143621931036-b6bkoqdidtv01vm09kv3u9qbrpc8t990.apps.googleusercontent.com'
-SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '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'
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = os.environ['SOCIAL_AUTH_GOOGLE_OAUTH2_KEY']
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = os.environ['SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET']
 SOCIAL_AUTH_GOOGLE_OAUTH2_SCOPE = ['https://www.googleapis.com/auth/userinfo.email', 'https://www.googleapis.com/auth/userinfo.profile', 'openid']
 SOCIAL_AUTH_GOOGLE_OAUTH2_EXTRA_DATA = ['first_name', 'last_name']
 
